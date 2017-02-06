@@ -1,0 +1,51 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`button-plus`
+
+
+@demo demo/index.html 
+-->
+
+<dom-module id="button-plus">
+  <template>
+    <style>
+      :host {
+        display:block;
+      }
+
+      div {
+        width:fit-content;
+        border:1px solid blue;
+        color:blue;
+        padding:8px 16px 8px 16px;
+        border-radius:6px;
+        text-align: center;
+        cursor:pointer;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+
+      div:hover {
+        color:white;
+        background-color:blue;
+
+      }
+
+    </style>
+    <div>Hello [[label]]</div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'button-plus',
+      properties: {
+        prop1: {
+          type: String,
+          value: 'label',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
