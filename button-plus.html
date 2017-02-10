@@ -12,38 +12,58 @@
     <style>
       :host {
         display:block;
+        --button-plus-main-color:#AD45AB;
+        --button-plus-fill-color:#AD45AB;
+        --button-plus-font-specification:{
+          font-size:1em;
+          font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          letter-spacing:1px;  
+        };
       }
 
       div {
-        width:fit-content;
-        border:1px solid blue;
-        color:blue;
-        padding:8px 16px 8px 16px;
+        @apply(--button-plus-font-specification);    
+        color:var(--button-plus-main-color);
+        padding:6px 16px 6px 16px;
         border-radius:6px;
         text-align: center;
         cursor:pointer;
-        text-transform: uppercase;
-        font-weight: 500;
       }
 
-      div:hover {
+      div:not([border]):hover {
+        opacity:0.8;
+      }
+
+      div[border] {
+         border:1px solid var(--button-plus-main-color);
+      }
+
+      div[fill] {
+        background-color:var(--button-plus-fill-color);
         color:white;
-        background-color:blue;
+      }
+
+      div[border]:hover {
+        color:white;
+        background-color:var(--button-plus-fill-color);
+      }
+
+      div[fill]:hover {
+        opacity:0.8;
 
       }
 
     </style>
-    <div>Hello [[label]]</div>
+    <div border$="[[border]]" fill$="[[fill]]"><content></content></div>
   </template>
 
   <script>
     Polymer({
       is: 'button-plus',
       properties: {
-        prop1: {
-          type: String,
-          value: 'label',
-        },
+        border:{value:false},
+        fill:{value:false}
+      
       },
 
     });

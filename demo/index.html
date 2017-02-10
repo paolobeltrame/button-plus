@@ -7,12 +7,14 @@
     <title>button-plus demo</title>
 
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-
     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
     <link rel="import" href="../button-plus.html">
 
     <style is="custom-style" include="demo-pages-shared-styles">
+    button-plus {
+      margin:24px;
+    }
     </style>
   </head>
   <body>
@@ -20,7 +22,9 @@
       <h3>Basic button-plus demo</h3>
       <demo-snippet>
         <template>
-          <button-plus></button-plus>
+          <button-plus border>Show items</button-plus>
+          <button-plus fill>Show items</button-plus>
+          <button-plus>Show items</button-plus>
         </template>
       </demo-snippet>
     </div>
